@@ -10,9 +10,26 @@
    <p><input type="number" name="num1"></p>
    <h1>num2 : </h1>
    <p><input type="number" name="num2"></p> -->
-   <p>Name</p>
-   <p><input type="text" name="nm"></p>
-   <p><input type="submit" value="submit"></p>
+   <table>
+      <tr>
+         <td>Name</td>
+         <td><input type="text" name="nm" value="{{request.form['nm']}}">
+         <ul>
+            {% for e in errors["uname"] %}
+            <li>{{e}}</li>
+            {% endfor %}
+         </ul></td>
+      </tr>
+      <tr>
+         <td>Email</td>
+         <td><input type="email" name="mail" value="{{request.form['mail']}}"></td>
+      </tr>
+      <tr>
+         <td><input type="submit" value="submit"></td>
+      </tr>
+   </table>
+   
+   <p></p>
 </form>
 
 {% endblock %}
